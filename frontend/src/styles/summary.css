@@ -1,0 +1,161 @@
+/* ════════════════════════════════════════════════════
+   TOTAL SPENT SUMMARY & MEMBER DETAILS
+   ════════════════════════════════════════════════════ */
+
+.summary-card {
+  background: rgba(255, 255, 255, 0.05); /* Match project card style */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Match project border */
+  border-radius: 18px; /* Match project border-radius */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 18px 24px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+.summary-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.summary-card-title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.summary-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary-left-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.summary-icon-circle {
+  width: 44px;
+  height: 44px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.summary-expense-count {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.summary-total-amt {
+  color: #fca5a5; /* Pinkish color for amount in image */
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ── Members Detail View ─────────────────────── */
+.members-detail-overlay {
+  background: linear-gradient(160deg,#0f172a 0%,#1e1b4b 40%,#0f172a 100%); /* Match project background */
+  min-height: 100vh;
+  padding: 0;
+  color: white;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 36px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.detail-header h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.members-detail-list {
+  padding: 24px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.member-detail-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.member-info-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.member-detail-av {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #444;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.member-main-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.member-spent-label {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.member-balance-right {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.bal-pos {
+  color: #4ade80; /* Green */
+}
+
+.bal-neg {
+  color: #fca5a5; /* Red/Pink */
+}

@@ -1,0 +1,114 @@
+/* ════════════════════════════════════════════════════
+   SHELL & BACKGROUND
+   ════════════════════════════════════════════════════ */
+.app-shell{
+  position:relative;
+  min-height:100vh;
+  background:linear-gradient(160deg,#0f172a 0%,#1e1b4b 40%,#0f172a 100%);
+  padding:0 0 60px;
+  overflow-x:hidden;
+}
+
+.bg-blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.35;
+  pointer-events:none;
+  z-index:0;
+}
+.blob-1{width:600px;height:600px;top:-180px;left:-120px;background:radial-gradient(circle,#6366f1,transparent 70%)}
+.blob-2{width:500px;height:500px;top:30%;right:-140px;background:radial-gradient(circle,#22c55e,transparent 70%)}
+.blob-3{width:400px;height:400px;bottom:-100px;left:30%;background:radial-gradient(circle,#f59e0b,transparent 70%);opacity:.18}
+
+/* ════════════════════════════════════════════════════
+   NAVBAR
+   ════════════════════════════════════════════════════ */
+.navbar{
+  position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1360px;margin:0 auto;
+  padding:20px 36px;
+}
+
+.nav-brand{display:flex;align-items:center;gap:12px}
+
+/* Logo icon handled by Logo component */
+
+.nav-title{
+  font-size:1.55rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.group-name-badge {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.nav-stats{display:flex;gap:8px;flex-wrap:wrap}
+
+.stat-pill{
+  display:flex;align-items:center;gap:6px;
+  padding:7px 14px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;
+  font-size:.78rem;font-weight:600;color:#cbd5e1;
+  backdrop-filter:blur(8px);
+}
+.stat-pill .stat-icon{font-size:.9rem}
+.stat-debt{color:#fbbf24;border-color:rgba(251,191,36,.2);background:rgba(251,191,36,.08)}
+
+.logout-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #fca5a5;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+}
+
+.logout-nav-button:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  transform: translateY(-1px);
+}
+
+.logout-nav-button svg {
+  transition: transform 0.2s ease;
+}
+
+.logout-nav-button:hover svg {
+  transform: translateX(2px);
+}
+
+/* ════════════════════════════════════════════════════
+   MAIN GRID
+   ════════════════════════════════════════════════════ */
+.main-grid{
+  position:relative;z-index:2;
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:24px;
+  max-width:1360px;
+  margin:0 auto;
+  padding:0 36px;
+  align-items:start;
+}
+
+@media(max-width:960px){
+  .main-grid{grid-template-columns:1fr}
+}

@@ -1,0 +1,75 @@
+/* ════════════════════════════════════════════════════
+   BUBBLE CHART VISUALIZATION
+   ════════════════════════════════════════════════════ */
+.bubble-chart-container {
+  width: 100%;
+  height: 320px;
+  background: transparent;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(4px);
+  cursor: default;
+  user-select: none;
+}
+
+/* Center Bubble (Current User) */
+.bubble-center {
+  z-index: 10;
+  background: rgba(34, 197, 94, 0.85); /* More solid green like image */
+  box-shadow: 0 0 40px rgba(34, 197, 94, 0.25);
+}
+
+.bubble-peripheral {
+  z-index: 5;
+  background: rgba(34, 197, 94, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bubble-plus-more {
+  background: rgba(45, 55, 72, 0.6);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Text styling within bubbles */
+.bubble-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bubble-amount {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 2px 0;
+}
+
+.bubble-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+

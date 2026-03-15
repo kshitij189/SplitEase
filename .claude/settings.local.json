@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"D:/COLLEGE/mycollege/WebDev/SplitEase-Django\" && python --version && node --version && npm --version)",
+      "Bash(cd \"D:/COLLEGE/mycollege/WebDev/SplitEase-Django\" && pip install django djangorestframework django-cors-headers 2>&1 | tail -5)",
+      "Bash(cd \"D:/COLLEGE/mycollege/WebDev/SplitEase-Django\" && npx create-react-app frontend 2>&1 | tail -10)",
+      "Bash(cd \"D:/COLLEGE/mycollege/WebDev/SplitEase-Django/backend\" && python manage.py makemigrations api && python manage.py migrate)",
+      "Bash(cd \"D:/COLLEGE/mycollege/WebDev/SplitEase-Django/frontend\" && npm install axios react-transition-group 2>&1 | tail -5)",
+      "Bash(curl -s -X POST http://localhost:8000/users -H \"Content-Type: application/json\" -d '{\"username\":\"alice\",\"firstName\":\"alice\",\"lastName\":\"alice\"}')",
+      "Bash(curl -s -X POST http://localhost:8000/users -H \"Content-Type: application/json\" -d '{\"username\":\"bob\",\"firstName\":\"bob\",\"lastName\":\"bob\"}' && echo \"\" && curl -s -X POST http://localhost:8000/expenses -H \"Content-Type: application/json\" -d '{\"title\":\"Dinner\",\"author\":\"alice\",\"lender\":\"alice\",\"borrowers\":[[\"bob\",1500]],\"amount\":1500}')",
+      "Bash(curl -s http://localhost:8000/debts && echo \"\" && curl -s http://localhost:8000/optimisedDebts)",
+      "Bash(cd \"D:/COLLEGE/mycollege/WebDev/SplitEase-Django/frontend\" && npx react-scripts build 2>&1 | tail -10)",
+      "Bash(cd \"D:/COLLEGE/mycollege/WebDev/SplitEase-Django/backend\" && rm -f db.sqlite3 && python manage.py migrate --run-syncdb 2>&1 | tail -5)"
+    ]
+  }
+}
