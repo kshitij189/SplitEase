@@ -13,7 +13,7 @@ class GroupSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Group
-        fields = ['id', 'name', 'created_by', 'members', 'created_at']
+        fields = ['id', 'name', 'created_by', 'members', 'created_at', 'invite_code']
 
 class UserDebtSerializer(serializers.ModelSerializer):
     class Meta:

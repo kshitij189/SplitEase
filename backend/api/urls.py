@@ -7,11 +7,17 @@ urlpatterns = [
     path('auth/login', views.login_view),
     path('auth/logout', views.logout_view),
     path('auth/me', views.me),
+    path('auth/google', views.google_login),
+    path('auth/token/refresh', views.token_refresh),
 
     # Groups
     path('groups', views.groups_list),
     path('groups/<int:group_id>', views.group_detail),
     path('groups/<int:group_id>/members', views.group_add_member),
+
+    # Invite
+    path('invite/<str:invite_code>', views.invite_info),
+    path('invite/<str:invite_code>/claim', views.claim_member),
 
     # Group-scoped Endpoints
     path('groups/<int:group_id>/users', views.users_list),

@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -6,6 +7,12 @@ class Group(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     members = models.ManyToManyField(User, related_name='expense_groups')
     created_at = models.DateTimeField(auto_now_add=True)
+    invite_code = models.CharField(max_length=12, unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.invite_code:
+            self.invite_code = uuid.uuid4().hex[:12]
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
