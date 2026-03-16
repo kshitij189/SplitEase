@@ -1,21 +1,24 @@
 import React from 'react';
 
-const Logo = ({ size = 32, color = '#3b82f6', showText = true, className = "" }) => {
+const Logo = ({ size = 38, showText = true, className = "" }) => {
   return (
     <div className={`brand-logo ${className}`} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-      <svg 
-        width={size} 
-        height={size} 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="2.5" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
-        style={{ color: color }}
-      >
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-      </svg>
+      <div style={{
+        width: size,
+        height: size,
+        backgroundColor: '#22c55e',
+        borderRadius: size * 0.25,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <span style={{
+          color: '#ffffff',
+          fontSize: size * 0.55,
+          fontWeight: 800,
+          lineHeight: 1,
+        }}>$</span>
+      </div>
       {showText && (
         <span className="logo-text">
           Split<span>Ease</span>

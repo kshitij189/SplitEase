@@ -22,6 +22,16 @@ const GroupView = ({ user, onLogout }) => {
   const [settleMessage, setSettleMessage] = useState(null);
   const [showMemberDetails, setShowMemberDetails] = useState(false);
   const [showChat, setShowChat] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleShareInvite = () => {
+    if (!group?.invite_code) return;
+    const inviteUrl = `${window.location.origin}/invite/${group.invite_code}`;
+    navigator.clipboard.writeText(inviteUrl).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   const fetchGroupData = useCallback(async () => {
     try {
@@ -139,11 +149,8 @@ const GroupView = ({ user, onLogout }) => {
       <nav className="navbar">
         <div className="nav-brand">
           <div className="nav-logo-wrapper" onClick={() => navigate('/groups')} style={{cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.75rem'}}>
-            <Logo size={24} showText={false} />
-            <span className="nav-title">
-              Split<span>Ease</span>
-              <span className="group-name-badge">/ {group.name}</span>
-            </span>
+            <Logo size={42} />
+            <span className="group-name-badge">/ {group.name}</span>
           </div>
         </div>
         <div className="nav-stats">
@@ -175,6 +182,16 @@ const GroupView = ({ user, onLogout }) => {
               <span>₹{(totalGroupDebt / 100).toFixed(2)} pending</span>
             </div>
           )}
+          <button onClick={handleShareInvite} className="stat-pill" style={{cursor: 'pointer', background: copied ? 'rgba(34,197,94,0.15)' : undefined, borderColor: copied ? 'rgba(34,197,94,0.3)' : undefined, color: copied ? '#4ade80' : undefined}}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '6px', opacity: 0.7}}>
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span>{copied ? 'Link Copied!' : 'Share Invite'}</span>
+          </button>
           <button onClick={onLogout} className="logout-nav-button">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>

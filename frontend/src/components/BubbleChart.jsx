@@ -91,8 +91,8 @@ const BubbleChart = ({ users, debts, currentUser, onClick }) => {
               transform: `translate(${x}px, ${y}px)`
             }}
           >
-            <div className="bubble-name" style={{fontFamily: 'serif'}}>{u.username}</div>
-            <div className="bubble-amount" style={{fontSize: '1rem', fontFamily: 'serif'}}>{fmt(u.balance)}</div>
+            <div className="bubble-name">{u.username}</div>
+            <div className="bubble-amount" style={{fontSize: '1rem'}}>{fmt(u.balance)}</div>
             <div className="bubble-label" style={{fontSize: '0.6rem'}}>{getLabel(u.balance)}</div>
           </div>
         );
@@ -127,8 +127,8 @@ const BubbleChart = ({ users, debts, currentUser, onClick }) => {
           zIndex: 100
         }}
       >
-        <div className="bubble-name" style={{fontSize: '1.25rem', fontFamily: 'serif'}}>{centerUser.username}</div>
-        <div className="bubble-amount" style={{fontFamily: 'serif'}}>{fmt(centerUser.balance)}</div>
+        <div className="bubble-name" style={{fontSize: '1.25rem'}}>{centerUser.username}</div>
+        <div className="bubble-amount">{fmt(centerUser.balance)}</div>
         <div className="bubble-label">{getLabel(centerUser.balance)}</div>
       </div>
     </div>

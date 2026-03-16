@@ -50,7 +50,7 @@ const GroupsDashboard = ({ user, onLogout }) => {
     <div className="dashboard-container">
       <header className="dashboard-header">
         <div className="header-content">
-          <Logo size={26} />
+          <Logo size={38} />
           <div className="user-controls">
             <span>Welcome, <strong>{user?.firstName || user?.username}</strong>!</span>
             <button onClick={onLogout} className="logout-button">
