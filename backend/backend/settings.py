@@ -89,8 +89,10 @@ if not DEBUG:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
-if not CORS_ALLOWED_ORIGINS or CORS_ALLOWED_ORIGINS == ['']:
+CORS_ALLOWED_ORIGINS = [
+    origin.rstrip('/') for origin in os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',') if origin
+]
+if not CORS_ALLOWED_ORIGINS:
     CORS_ALLOWED_ORIGINS = []
 
 REST_FRAMEWORK = {
