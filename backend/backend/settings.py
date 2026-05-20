@@ -43,6 +43,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'backend.urls'
 
+APPEND_SLASH = False
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -95,6 +97,18 @@ CORS_ALLOWED_ORIGINS = [
 if not CORS_ALLOWED_ORIGINS:
     CORS_ALLOWED_ORIGINS = []
 
+# Allow all CORS in development
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'authorization',
+    'content-type',
+    'origin',
+    'x-requested-with',
+]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -114,3 +128,4 @@ SIMPLE_JWT = {
 
 # Google OAuth
 GOOGLE_CLIENT_ID = os.getenv('GOOGLE_CLIENT_ID', '')
+

@@ -57,7 +57,7 @@ def signup(request):
             user.save()
 
             for group in user.expense_groups.all():
-                log_activity(group, username, 'member_added', f"{username} changed a member : {username}")
+                log_activity(group, username, 'member_added', f"Signed up and claimed their account")
 
             tokens = get_tokens_for_user(user)
             return Response({
